@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис To-Do</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="header__title">
+                <i class="fas fa-check-circle"></i>
+                Мои задачи
+            </h1>
+            <p class="header__subtitle">Планируйте свои дела эффективно</p>
+        </header>
+
+        <main class="main">
+            <section class="to-do">
+                <form class="to-do__form">
+                    <div class="to-do__input-container">
+                        <input type="text" class="to-do__input" placeholder="Добавить новую задачу..." required>
+                        <button type="submit" class="to-do__submit-button" aria-label="Добавить задачу">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <ul class="to-do__list">
+                    <!-- Задачи будут добавляться с помощью JavaScript -->
+                </ul>
+
+                <div class="to-do__stats">
+                    <div class="to-do__stats-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>Всего задач: <span id="total-tasks">0</span></span>
+                    </div>
+                    <div class="to-do__stats-item">
+                        <i class="fas fa-save"></i>
+                        <span>Автосохранение: <span id="save-status">включено</span></span>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="instructions">
+                <h2 class="instructions__title">
+                    <i class="fas fa-info-circle"></i>
+                    Как использовать
+                </h2>
+                <ul class="instructions__list">
+                    <li class="instructions__item">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Добавьте задачу в поле выше</span>
+                    </li>
+                    <li class="instructions__item">
+                        <i class="fas fa-edit"></i>
+                        <span>Нажмите на иконку карандаша для редактирования</span>
+                    </li>
+                    <li class="instructions__item">
+                        <i class="fas fa-copy"></i>
+                        <span>Нажмите на иконку копии для дублирования задачи</span>
+                    </li>
+                    <li class="instructions__item">
+                        <i class="fas fa-trash"></i>
+                        <span>Нажмите на иконку корзины для удаления задачи</span>
+                    </li>
+                    <li class="instructions__item">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Все изменения сохраняются автоматически</span>
+                    </li>
+                </ul>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">© 2025 To-Do Сервис. Все задачи сохраняются в вашем браузере.</p>
+            <button class="footer__button" id="clear-all">
+                <i class="fas fa-broom"></i>
+                Очистить все задачи
+            </button>
+        </footer>
+    </div>
+
+    <!-- Шаблон для задачи -->
+    <template id="to-do__item-template">
+        <li class="to-do__item">
+            <span class="to-do__item-text"></span>
+            <div class="to-do__item-buttons">
+                <button class="to-do__item-button to-do__item-button_type_edit" aria-label="Редактировать">
+                    <i class="fas fa-edit"></i>
+                </button>
+                <button class="to-do__item-button to-do__item-button_type_duplicate" aria-label="Копировать">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button class="to-do__item-button to-do__item-button_type_delete" aria-label="Удалить">
+                    <i class="fas fa-trash"></i>
+                </button>
+            </div>
+        </li>
+    </template>
+
+    <script src="index.js"></script>
+</body>
+</html>

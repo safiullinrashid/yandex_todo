@@ -1,0 +1,378 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Хедер */
+.header {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2.5rem;
+    color: #4f46e5;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.header__title i {
+    font-size: 2.2rem;
+}
+
+.header__subtitle {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Основной контент */
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Секция To-Do */
+.to-do {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.to-do__form {
+    margin-bottom: 2rem;
+}
+
+.to-do__input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.to-do__input {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.to-do__input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.to-do__submit-button {
+    background: #4f46e5;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.to-do__submit-button:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.to-do__submit-button:active {
+    transform: translateY(0);
+}
+
+/* Список задач */
+.to-do__list {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.to-do__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.5rem;
+    background: #f9fafb;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.to-do__item:hover {
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.to-do__item-text {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #374151;
+    padding-right: 1rem;
+    word-break: break-word;
+}
+
+.to-do__item-text[contenteditable="true"] {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 2px solid #4f46e5;
+    outline: none;
+}
+
+.to-do__item-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.to-do__item-button {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+.to-do__item-button:hover {
+    transform: translateY(-2px);
+}
+
+.to-do__item-button_type_edit:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: white;
+}
+
+.to-do__item-button_type_duplicate:hover {
+    background: #10b981;
+    border-color: #10b981;
+    color: white;
+}
+
+.to-do__item-button_type_delete:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: white;
+}
+
+/* Статистика */
+.to-do__stats {
+    display: flex;
+    justify-content: space-between;
+    background: #f0f9ff;
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #e0f2fe;
+}
+
+.to-do__stats-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0369a1;
+    font-weight: 500;
+}
+
+.to-do__stats-item i {
+    font-size: 1.2rem;
+}
+
+/* Инструкции */
+.instructions {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.instructions__title {
+    font-size: 1.5rem;
+    color: #4f46e5;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions__list {
+    list-style: none;
+}
+
+.instructions__item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+    color: #4b5563;
+}
+
+.instructions__item:last-child {
+    border-bottom: none;
+}
+
+.instructions__item i {
+    color: #4f46e5;
+    font-size: 1.1rem;
+    width: 24px;
+}
+
+/* Футер */
+.footer {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__text {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer__button {
+    background: #f3f4f6;
+    color: #374151;
+    border: 2px solid #e5e7eb;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer__button:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+    transform: translateY(-2px);
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+    
+    .header__title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .header, .to-do, .instructions, .footer {
+        padding: 1.5rem;
+    }
+    
+    .header__title {
+        font-size: 1.8rem;
+    }
+    
+    .to-do__input-container {
+        flex-direction: column;
+    }
+    
+    .to-do__submit-button {
+        padding: 0.8rem;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .to-do__stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 1.5rem;
+    }
+    
+    .to-do__item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .to-do__item-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.to-do__item {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.to-do__list:empty::after {
+    content: 'Список задач пуст. Добавьте первую задачу!';
+    display: block;
+    text-align: center;
+    padding: 3rem 1rem;
+    color: #9ca3af;
+    font-style: italic;
+    background: #f9fafb;
+    border-radius: 12px;
+    border: 2px dashed #e5e7eb;
+}
